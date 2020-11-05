@@ -101,7 +101,7 @@ F5，复制
 Alt+Delete，安全删除 
 Ctrl+Alt+N，内联
 
-调试快捷键
+### 调试快捷键
 
 alt+F8 debug时选中查看值 
 Alt+Shift+F9，选择 Debug 
@@ -129,3 +129,5 @@ Alt+F10，定位到断点
 将光标放到类名上，按atl＋enter键，就会提示生成serialVersionUID了。
 
 替换当前文件内容 ：ctrl+R
+
+Idea如何快速生成方法返回值:ctrl+alt+v
