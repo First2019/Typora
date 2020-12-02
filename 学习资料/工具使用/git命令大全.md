@@ -425,7 +425,7 @@ $git push origin test:test        // 提交本地test分支作为远程的test�
 
  
 
-*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
+创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
 
 $git symbolic-ref HEAD refs/heads/[name]
 

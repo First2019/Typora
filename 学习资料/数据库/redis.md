@@ -22,3 +22,13 @@
 sorted set多了一个权重参数score,集合中的元素能够按score进行排列。可以做排行榜应用，取TOP N操作 
 key区分大小写
 命令不区分大小写：set,SET.  
+
+### RedisTemplate中定义了对5种数据结构操作
+
+```cpp
+redisTemplate.opsForValue();//操作字符串
+redisTemplate.opsForHash();//操作hash
+redisTemplate.opsForList();//操作list
+redisTemplate.opsForSet();//操作set
+redisTemplate.opsForZSet();//操作有序set
+```
