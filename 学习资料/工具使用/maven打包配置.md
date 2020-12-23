@@ -252,6 +252,14 @@ provided对编译和测试过程都有效
 
 4.运行maven之前先看一块profile的配置环境有没有勾选错别人的环境
 
+### 命令
+
+#### 打包
+
+```maven
+mvn install:install-file -Dfile=E:\softwares\zookeeper-3.4.10\zookeeper-3.4.10.jar -DgroupId=org.apache.zookeeper -DartifactId=zookeeper -Dversion=3.4.10 -Dpackaging=jar
+```
+
 ### 异常
 
 建议和总结：

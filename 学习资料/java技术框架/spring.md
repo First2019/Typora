@@ -6,6 +6,8 @@
 
 读取配置文件，并映射到实体里面
 
+如果要赋值静态属性，只会调用 非静态的set方法，所以我们稍微做一下改动，set方法都换成非静态的就可以了
+
 --------
 
 **@DataTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")**
@@ -16,8 +18,19 @@
 
 **@ControllerAdvice 拦截异常并统一处理**
 
+**@AllArgsConstructor注解作用**
+
+它是lombok中的注解,作用在类上;
+使用后添加一个构造函数，该构造函数含有所有已声明字段属性参数
+
 
 
 ### 依赖包
 
 spring-boot-devtools的模块给springboot应用提供热部署的功能。
+
+### SpringCloud
+
+- eureka.client.register-with-eureka：表示是否将自己注册到Eureka Server，默认是true。
+- eureka.client.fetch-registry：表示是否从Eureka Server获取注册信息，默认为true。
+- eureka.client.serviceUrl.defaultZone： 这个是设置与Eureka Server交互的地址，客户端的查询服务和注册服务都需要依赖这个地址。

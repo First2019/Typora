@@ -6,10 +6,14 @@ fori/sout/psvm + Tab
 Ctrl+Alt+T 生成try catch 或者 Alt+enter 
 CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里 
 Ctrl + O 重写方法 
-Ctrl + I 实现方法 
+Ctrl + I 实现方法
+Ctrl + INSEART 选中当前行 
+
 Ctr+shift+U 大小写转化 
 ALT+回车 导入包,自动修正 
 ALT+/ 代码提示 
+ALT+F4 关闭idea
+
 CTRL+J 自动代码 
 Ctrl+Shift+J，整合两行为一行 
 CTRL+空格 代码提示 
@@ -130,4 +134,22 @@ Alt+F10，定位到断点
 
 替换当前文件内容 ：ctrl+R
 
-Idea如何快速生成方法返回值:ctrl+alt+v
+RestfulToolkit访问路径快速定位到Controller方法:WIN (Ctrl + Alt + N )
+
+
+
+### git
+
+#### 代码回退
+
+打开项目，如果回退整个项目的代码，选择项目->Local History->show History。
+
+这时可以看到整个项目中文件的修改过程。
+
+选择其中一个文件，可以查看其前后差异。
+
+如果想回退，则选择“revert”。
+
+当然，我们也可以直接定位到某一个文件，查看其修改历史。
+
+某一个文件前后修改历史可以相互改变，如图所示，中间的符号可以接收以前的改变。
