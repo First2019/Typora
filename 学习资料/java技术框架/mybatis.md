@@ -15,3 +15,10 @@ BIGINT      DECIMAL    TIME           NULL            CURSOR
 ### 传参
 
 使用arg0,param1获得参数是一直有效的，xml不写传参类型
+
+```mysql
+<if test="flag != null and 'true'.toString() == flag.toString()">
+​  flage=#{flag, jdbcType=BOOLEAN}
+</if>
+```
+

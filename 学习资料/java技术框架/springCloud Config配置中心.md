@@ -29,3 +29,61 @@
 ```
 
 上面的url会映射{application}-{profile}.properties对应的配置文件，{label}对应git上不同的分支，默认为master。
+
+### 从服务端获取配置内容
+
+访问地址：http://localhost:8000/config-repo/dev（获取完整配置信息）
+
+访问地址：http://localhost:8000/system/dev（获取完整配置信息）
+
+访问地址：http://localhost:8000/system-dev.properties（获取指定配置文件内容）
+
+访问地址：http://localhost:8001/config-repo/uat（获取完整配置信息）
+
+### 配置属性加解密之非对称加密
+
+**CMD下执行命令**
+
+```java
+D:\>keytool -genkeypair -alias mytestkey -keyalg RSA -keypass changeme -keystore server.jks -storepass letmein
+您的名字与姓氏是什么?
+  [Unknown]:  zhou
+您的组织单位名称是什么?
+  [Unknown]:  zw
+您的组织名称是什么?
+  [Unknown]:  zw
+您所在的城市或区域名称是什么?
+  [Unknown]:  shenzhen
+您所在的省/市/自治区名称是什么?
+  [Unknown]:  city
+该单位的双字母国家/地区代码是什么?
+  [Unknown]:  sz
+CN=zhou, OU=zhou, O=zhenwei, L=shenzhen, ST=shi, C=sz是否正确?
+  [否]:  y
+D:\>
+```
+
+说明：
+
+- 上面参数的解释如下:
+- -genkeypair 表示生成密钥对
+- -alias 表示 keystore 关联的别名
+- -keyalg 表示指定密钥生成的算法
+- -keystore 指定密钥库的位置和名称
+
+  1）会在D盘输入一个文件server.jks；
+
+**将server.jks复制到工程中**
+
+![img](https://img-blog.csdn.net/20180717134709159?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoZW56aGVuX3pzdw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+访问 /encrypt/status 端点，显示状态OK。
+
+加密： 
+curl http://localhsot:8080/enrypt -d mysercet 
+结果会出来一长串 fdasfa2341sdfa134214…. 
+解密： 
+curl http://localhost:8080/decrypt -d fdasfa2341sdfa134214…. 
+结果会出来 mysercet
+
+**更改配制后只需要重启客户端即可生效**

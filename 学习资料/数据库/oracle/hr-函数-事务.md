@@ -78,12 +78,13 @@ select concat('sq','hello') from dual;
 ### 数值函数
 
 ```mysql
-select round(45.926,-1) from dual; --45.93 四舍五入,后参数指明精度，可取负数
+select round(45.926,2) from dual; --45.93 四舍五入,后参数指明精度，可取负数
 select round(45.926,-1) from dual;--50
 select trunc(45.926,2) from dual;  --45.92 截取，后参数指明精度,可取负数
 select trunc(45.926,-1) from dual;
 select mod(6,5)from dual;--2 求余，前分子，后分母
 select extract(year from sysdate) from dual;--提取日期
+POW(x,y) 函数和 POWER(x,y) 函数用于计算 x 的 y 次方。
 decode(job,
        'ds',sal+1000,
        'manager',sal+800,

@@ -1,3 +1,5 @@
+首先看两个服务是否在同一个注册中心
+
 ### 传参
 
 #### 1.无参数
@@ -90,6 +92,8 @@ String test(@RequestBody String name);
 - 　　@RequestBody注解的参数，需要POST方式才能传递数据
 
 #### 2.Feign多参数的问题
+
+feign不支持get传递对象
 
 （1）GET——@PathVariable
 
@@ -203,3 +207,11 @@ String test(@RequestBody String name, @RequestParam("type") Integer type);
 - 　　使用@RequestParam注解时必须要在后面加上参数名
 - 　　@RequestBody用来修饰对象，但是既有@RequestBody也有@RequestParam，那么参数就要放在请求的url中，@RequestBody修饰的就要放在提交对象中
 - 　　当参数比较复杂时，feign即使声明为get请求也会强行使用post请求
+
+
+
+**Could not write JSON document: (was java.lang.NullPointerException) (through reference chain**
+
+我们都会建model包下的实体bean。每个实体的属性的数据类型可能用了基本类型；也可能用了包装类型，可能有时候在处理业务的时候null值的处理方式我们直接修改bean的字段类型为但是又没有把setter/getter方法重新生成，就比如我的一个字段类型仅仅把属性的基本类型（如double）改为包装类型（如Double），而并没有将setter/getter的类型一起修改。
+
+自建get方法而无对应属性也是这个错

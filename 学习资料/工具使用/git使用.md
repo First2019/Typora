@@ -1,4 +1,4 @@
-# [Git如何fork别人的仓库并作为贡献者提交代码](https://www.cnblogs.com/javaIOException/p/11867988.html)
+### [Git如何fork别人的仓库并作为贡献者提交代码](https://www.cnblogs.com/javaIOException/p/11867988.html)
 
 例如 要fork一份google的MLperf/inference代码，下面介绍具体做法：
 预备知识
@@ -122,3 +122,30 @@ Able to merge代表你的代码与上游代码没有冲突，可以提交
 然后在git命令行里也要设置提交代码的邮箱
 git config --global user.email example@gmail.com
 然后再进行步骤1
+
+### push冲突
+
+也就是push本地的修改到远程仓库时出现了错误
+
+上网查了一下说是远程仓库和本地仓库冲突导致，然后总结一下解决办法：
+
+**方法一**：push前先将远程仓库(respository)修改pull下来，然后再push -u合并（这是我常用的方法）：
+
+```ruby
+$ git pull origin master
+$ git push -u origin master
+```
+
+**方法二**：如果不想merge远程和本地的个性，可以先创建一个分支，再push，再合并：
+
+```ruby
+$ git branch [name]
+然后push
+$ git push -u origin [name]
+```
+
+**方法三**：强制push，即使远程仓库的修改丢失（最不建议使用的方式，因为如果多人协作开发别人的修改就会因此丢失）
+
+```ruby
+$ git push -u origin master -f 
+```
