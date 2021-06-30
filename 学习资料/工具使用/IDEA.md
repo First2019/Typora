@@ -136,7 +136,7 @@ Alt+F10，定位到断点
 
 RestfulToolkit访问路径快速定位到Controller方法:WIN (Ctrl + Alt + N )
 
-
+切换代码大小写 idea: Ctrl+Shift+U
 
 ### git
 
@@ -153,3 +153,4 @@ RestfulToolkit访问路径快速定位到Controller方法:WIN (Ctrl + Alt + N )
 当然，我们也可以直接定位到某一个文件，查看其修改历史。
 
 某一个文件前后修改历史可以相互改变，如图所示，中间的符号可以接收以前的改变。
+

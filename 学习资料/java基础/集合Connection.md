@@ -73,7 +73,7 @@ SynchronizedList(List<E> list) {
     super(list);
     this.list = list;
 }
-public E get(int index) {
+public E get(int index) {//重写了父类方法，加同步；
     synchronized(this.mutex) {
         return this.list.get(index);
     }

@@ -12,6 +12,10 @@ java -jar xxx.jar &
 
 区别:前台启动ctrl+c就会关闭程序,后台启动ctrl+c不会关闭程序
 
+> -client，-server
+
+这两个参数用于设置虚拟机使用何种运行模式，client模式启动比较快，但运行时性能和内存管理效率不如server模式，通常用于客户端应用程序。相反，server模式启动比client慢，但可获得更高的运行性能。 在 Linux，Solaris上缺省采用server模式。
+
 # 制定控制台的标准输出
 
 ```
@@ -74,3 +78,15 @@ fi
 ![img](https://images2015.cnblogs.com/blog/1006037/201612/1006037-20161208171432741-871972136.png)
 
  
+
+```shell
+#!/bin/bash
+jarname='demo-0.0.1-SNAPSHOT'
+#通过程序名获取进程ID
+pid=`ps aux | grep $jarname | grep -v grep | awk '{print $2}'`
+echo $pid
+kill -9 $pid
+java -jar $jarname.jar
+nohup java -jar /zz/$jarname.jar  >/zz/run.log &
+```
+

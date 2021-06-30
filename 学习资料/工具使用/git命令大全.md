@@ -161,25 +161,25 @@ git remote add origin git@github.com:daixu/WebApp.git
 
 #### 4、版本库管理相关命令
 
-| 命令               | 简要说明                               |
-| ------------------ | -------------------------------------- |
-| git count-objects  | 显示松散对象的数量和磁盘占用           |
-| git filter-branch  | 版本库重构                             |
-| git fsck           | 对象库完整性检查                       |
-| git fsck-objects*  | 同义词，等同于 git fsck                |
-| git gc             | 版本库存储优化                         |
-| git index-pack     | 从打包文件创建对应的索引文件           |
-| git lost-found*    | 过时，请使用 git fsck –lost-found 命令 |
-| git pack-objects   | 从标准输入读入对象ID，打包到文件       |
-| git pack-redundant | 查找多余的 pack 文件                   |
-| git pack-refs      | 将引用打包到 .git/packed-refs 文件中   |
-| git prune          | 从对象库删除过期对象                   |
-| git prune-packed   | 将已经打包的松散对象删除               |
-| git relink         | 为本地版本库中相同的对象建立硬连接     |
-| git repack         | 将版本库未打包的松散对象打包           |
-| git show-index     | 读取包的索引文件，显示打包文件中的内容 |
-| git unpack-objects | 从打包文件释放文件                     |
-| git verify-pack    | 校验对象库打包文件                     |
+| 简要说明                               | 命令               |
+| -------------------------------------- | ------------------ |
+| 显示松散对象的数量和磁盘占用           | git count-objects  |
+| 版本库重构                             | git filter-branch  |
+| 对象库完整性检查                       | git fsck           |
+| 同义词，等同于 git fsck                | git fsck-objects*  |
+| 版本库存储优化                         | git gc             |
+| 从打包文件创建对应的索引文件           | git index-pack     |
+| 过时，请使用 git fsck –lost-found 命令 | git lost-found*    |
+| 从标准输入读入对象ID，打包到文件       | git pack-objects   |
+| 查找多余的 pack 文件                   | git pack-redundant |
+| 将引用打包到 .git/packed-refs 文件中   | git pack-refs      |
+| 从对象库删除过期对象                   | git prune          |
+| 将已经打包的松散对象删除               | git prune-packed   |
+| 为本地版本库中相同的对象建立硬连接     | git relink         |
+| 将版本库未打包的松散对象打包           | git repack         |
+| 读取包的索引文件，显示打包文件中的内容 | git show-index     |
+| 从打包文件释放文件                     | git unpack-objects |
+| 校验对象库打包文件                     | git verify-pack    |
 
 #### 5、数据传输相关命令
 
@@ -559,7 +559,25 @@ git commit -m 'first commit'
 git remote add origin git@github.com:daixu/WebApp.git
 git push -u origin master
 
- 
+###  用户
+
+如果是用https方式clone代码，那么可以通过修改git配置中的用户和邮箱来切换用户：
+
+```
+git config --global user.name "YOURUSERNAME" 
+git config --global user.email "YOUREMAIL"
+```
+
+在开始之前，我们首先来明确一下需要每次输入用户名和密码的场景：
+
+第一，必须是使用https方式下载的代码在操作时才可能需要输入用户名密码。
+
+第二，在满足第一点的基础上，未配置credential.helper。可以用如下命令（如未特别说明，所有命令均默认在Git Bash工具下执行）检查credential.helper的当前配置：
+
+git config -l|grep credential.helper
+如果未配置的话结果应该为空
+
+
 
 ### Git 常用命令图表 
 

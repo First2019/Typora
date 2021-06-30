@@ -49,7 +49,7 @@ alter table tt drop column ts;
 
 ### ALTER TABLE语句
 
-用于修改已经存在的表的设计。
+**用于修改已经存在的表的设计。**
 语法：ALTER TABLE table ADD COLUMN field type[(size)] [NOT NULL] [CONSTRAINT index]
 
 ```
